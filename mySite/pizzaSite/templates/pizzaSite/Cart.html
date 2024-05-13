@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizza Palace!</title>
+<style>
+body {background-color:darkred}
+h1 {color:white; font-family:broadway; font-size:300%; text-align:center}
+h2 {color:white; font-family:Arial; font-size:200%; text-align:center}
+h3 {color:white; font-family:Arial; font-size:120%; text-align:right}
+h4 {color:white; font-family:arial; font-size:300%; text-align:center}
+p {color:white; font-family:arial; font-size:150%; text-align:center}
+a:link {color:white; background-color:black; text-decoration:none;}
+a:visited {color:white; background-color:black; text-decoration:none;}
+a:hover {color:yellow; background-color:black; font-size:200%; text-decoration:none;}
+
+</style>
+
+</head>
+<body>
+
+<h3><a href="{% url 'Cart' %}">Cart</a></h3>
+<h4> </h4>
+<h1><a href="{% url 'home' %}">Pizza Palace!</a></h1>
+<h1>Review Your Order Below!</h1>
+<h2> </h2>
+<div>
+    <p>Order Name: {{ order.name  }}</p>
+    {% for pizza in pizzas %}
+        <p> {{ pizza.get_size_display }} {{pizza.get_panType_display}} Pizza - {{ pizza.get_sauce_display }} sauce</p>
+        <p> Toppings</p>
+        {% for topping in pizza.toppings.all %}
+            <li>{{ topping.name }}</li>
+        {% empty %}
+            <li>No toppings</li>
+        {% endfor %}
+
+    {% empty %}
+        <p> No Pizzas</p>
+    {% endfor %}
+    <p>Total Price: ${{order.price}}</p>
+
+
+
+</div>
+
+
+
+<p style="text-align:left";><a href="{% url 'Review' %}">Check Out Our Reviews</a></p>
+<p style="text-align:left";><a href="{% url 'logout' %}">Logout</a></p>
+</body>
+</html>

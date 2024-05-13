@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizza Palace!</title>
+<style>
+body {background-color:darkred}
+h1 {color:white; font-family:broadway; font-size:300%; text-align:center}
+h2 {color:white; font-family:Arial; font-size:200%; text-align:center}
+h3 {color:white; font-family:Arial; font-size:120%; text-align:right}
+h4 {color:white; font-family:arial; font-size:300%; text-align:center}
+p {color:white; font-family:arial; font-size:150%; text-align:center}
+a:link {color:white; background-color:black; text-decoration:none;}
+a:visited {color:white; background-color:black; text-decoration:none;}
+a:hover {color:yellow; background-color:black; font-size:200%; text-decoration:none;}
+button {color:white; background-color:black; font-size:200%; text-decoration:none;}
+
+</style>
+
+</head>
+<body>
+
+<h3><a href="{% url 'Cart' %}">Cart</a></h3>
+<h4> </h4>
+<h1><a href="{% url 'home' %}">Pizza Palace!</a></h1>
+<h1>Our Delicious Fresh Ingredients!</h1>
+<h2 style="color:yellow">Crust Options</h2>
+<p>Thin crust, Hand-tossed crust, Deep dish crust</p>
+<h2 style="color:yellow">Sauces</h2>
+<p>Tomato, Alfredo, or Barbeque</p>
+<h2 style="color:yellow">Meats</h2>
+<p>Italian Sausage, Pepperoni, Chicken</p>
+<p>Ham, Bacon, Beef, and Canadian Bacon</p>
+<h2 style="color:yellow">Cheeses</h2>
+<p>Mozzarella, Italian Blend, Parmesan</p>
+<h2 style="color:yellow">Vegetables</h2>
+<p>Peppers, Onions, Black Olives</p>
+<p>Green Olives, Tomatoes, and Mushrooms</p>
+<h2 style="color:yellow">Specialty Toppings</h2>
+<p>Pineapple, and Anchovies</P>
+<h4> </h4>
+<p><a href="{% url 'login' %}">Return To Login</a></p>
+<h4> </h4>
+<p style="text-align:left";><a href="{% url 'CreateOrder' %}">Make an Order</a></p>
+<p style="text-align:left";><a href="{% url 'Review' %}">Check Out Our Reviews</a></p>
+<p style="text-align:left";><a href="{% url 'logout' %}">Logout</a></p>
+</body>
+</html>
+
+
+
